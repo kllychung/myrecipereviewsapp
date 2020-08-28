@@ -1,3 +1,6 @@
+# Project Motivation
+Build an api using Auth0 Role Base Access Control in python
+
 # Myrecipes API Backend
 This project contains  code written for myRecipes api which contain several endpoints which 
 
@@ -97,3 +100,5 @@ dropdb myrecipes_test
 createdb myrecipes_test
 python test_app.py
 ```
+## Api doumentation
+See apidoc.txt

@@ -1,0 +1,343 @@
+
+# MyRecipesTestCollection
+
+## Indices
+
+* [Publisher](#publisher)
+
+  * [ADD RECIPE REVIEW - UNAUTHORIZED](#1-add-recipe-review---unauthorized)
+  * [DELETE RECIPE](#2-delete-recipe)
+  * [GET RECIPE](#3-get-recipe)
+  * [GET RECIPE REVIEW](#4-get-recipe-review)
+  * [PATCH RECIPE](#5-patch-recipe)
+  * [POST RECIPE](#6-post-recipe)
+  * [POST RECIPE](#7-post-recipe)
+
+* [Reader](#reader)
+
+  * [ADD RECIPE REVIEW](#1-add-recipe-review)
+  * [DELETE RECIPE-UNAUTHORIZED](#2-delete-recipe-unauthorized)
+  * [GET RECIPE](#3-get-recipe-1)
+  * [GET RECIPE REVIEW](#4-get-recipe-review-1)
+  * [PATCH RECIPE - UNAUTHORIZED](#5-patch-recipe---unauthorized)
+  * [POST RECIPE - UNAUTHORIZED](#6-post-recipe---unauthorized)
+
+
+--------
+
+
+## Publisher
+
+
+
+### 1. ADD RECIPE REVIEW - UNAUTHORIZED
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: RAW
+URL: https://myrecipereviewsapp.herokuapp.com/recipes/1/add_review
+```
+
+
+***Headers:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| Content-Type | application/json |  |
+
+
+
+***Body:***
+
+```js        
+{
+	"review": "amazing recipe"
+}
+```
+
+
+
+### 2. DELETE RECIPE
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: RAW
+URL: https://myrecipereviewsapp.herokuapp.com/recipes/4
+```
+
+
+
+### 3. GET RECIPE
+
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: RAW
+URL: https://myrecipereviewsapp.herokuapp.com/recipes
+```
+
+
+***Headers:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| Content-Type | application/json |  |
+
+
+
+### 4. GET RECIPE REVIEW
+
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: https://myrecipereviewsapp.herokuapp.com/reviews/4
+```
+
+
+
+### 5. PATCH RECIPE
+
+
+
+***Endpoint:***
+
+```bash
+Method: PATCH
+Type: RAW
+URL: https://myrecipereviewsapp.herokuapp.com/recipes/4
+```
+
+
+
+***Body:***
+
+```js        
+{
+	"name": "Lemon Chicken 4",
+	"ingredients": [ "1 lb chicken", "3 lemons", "1 pinch salt", "1 pinch pepper"],
+	"imagelink": "https://natashaskitchen.com/wp-content/uploads/2020/02/Lemon-Chicken-3-728x1092.jpg",
+	"videolink": "https://youtu.be/mIE2QXup-pk",
+	"steps" : ["1. Marinate chicken with salt, lemon and pepper", "2. Bake chicken for 20 mins"]
+}
+```
+
+
+
+### 6. POST RECIPE
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: RAW
+URL: https://myrecipereviewsapp.herokuapp.com/recipes
+```
+
+
+
+***Body:***
+
+```js        
+{
+	
+	"name": "Lemon Chicken 45",
+	"ingredients": [ "1 lb chicken", "3 lemons", "1 pinch salt", "1 pinch pepper"],
+	"imagelink": "https://natashaskitchen.com/wp-content/uploads/2020/02/Lemon-Chicken-3-728x1092.jpg",
+	"videolink": "https://youtu.be/mIE2QXup-pk",
+	"steps" : ["1. Marinate chicke with salt, lemon and pepper", "2. Bake chicken for 20 mins"]
+	
+}
+```
+
+
+
+### 7. POST RECIPE
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: RAW
+URL: https://myrecipereviewsapp.herokuapp.com/recipes
+```
+
+
+
+***Body:***
+
+```js        
+{
+	
+	"name": "Lemon wih Chicken",
+	"ingredients": [ "1 lb chicken", "3 lemons", "1 pinch salt", "1 pinch pepper"],
+	"imagelink": "https://natashaskitchen.com/wp-content/uploads/2020/02/Lemon-Chicken-3-728x1092.jpg",
+	"videolink": "https://youtu.be/mIE2QXup-pk",
+	"steps" : ["1. Marinate chicken with salt, lemon and pepper", "2. Bake chicken for 20 mins"]
+	
+}
+```
+
+
+
+## Reader
+
+
+
+### 1. ADD RECIPE REVIEW
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: RAW
+URL: https://myrecipereviewsapp.herokuapp.com/recipes/14/add_review
+```
+
+
+***Headers:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| Content-Type | application/json |  |
+
+
+
+***Body:***
+
+```js        
+{
+	"review": "amazing recipe"
+}
+```
+
+
+
+### 2. DELETE RECIPE-UNAUTHORIZED
+
+
+
+***Endpoint:***
+
+```bash
+Method: DELETE
+Type: RAW
+URL: https://myrecipereviewsapp.herokuapp.com/recipes/17
+```
+
+
+
+### 3. GET RECIPE
+
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: RAW
+URL: https://myrecipereviewsapp.herokuapp.com/recipes
+```
+
+
+***Headers:***
+
+| Key | Value | Description |
+| --- | ------|-------------|
+| Content-Type | application/json |  |
+
+
+
+### 4. GET RECIPE REVIEW
+
+
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: https://myrecipereviewsapp.herokuapp.com/recipes/14
+```
+
+
+
+### 5. PATCH RECIPE - UNAUTHORIZED
+
+
+
+***Endpoint:***
+
+```bash
+Method: PATCH
+Type: RAW
+URL: https://myrecipereviewsapp.herokuapp.com/recipes/1
+```
+
+
+
+***Body:***
+
+```js        
+{
+	"name": "Lemon Chicken 4",
+	"ingredients": [ "1 lb chicken", "3 lemons", "1 pinch salt", "1 pinch pepper"],
+	"imagelink": "https://natashaskitchen.com/wp-content/uploads/2020/02/Lemon-Chicken-3-728x1092.jpg",
+	"videolink": "https://youtu.be/mIE2QXup-pk",
+	"steps" : ["1. Marinate chicken with salt, lemon and pepper", "2. Bake chicken for 20 mins"]
+}
+```
+
+
+
+### 6. POST RECIPE - UNAUTHORIZED
+
+
+
+***Endpoint:***
+
+```bash
+Method: POST
+Type: RAW
+URL: https://myrecipereviewsapp.herokuapp.com/recipes
+```
+
+
+
+***Body:***
+
+```js        
+{
+	
+	"name": "Lemon Chicken 2",
+	"ingredients": [ "1 lb chicken", "3 lemons", "1 pinch salt", "1 pinch pepper"],
+	"imagelink": "https://natashaskitchen.com/wp-content/uploads/2020/02/Lemon-Chicken-3-728x1092.jpg",
+	"videolink": "https://youtu.be/mIE2QXup-pk",
+	"steps" : ["1. Marinate chicken with salt, lemon and pepper", "2. Bake chicken for 20 mins"]
+	
+}
+```
+
+
+
+---
