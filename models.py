@@ -3,7 +3,7 @@ import os
 from sqlalchemy import Column, String, Integer, create_engine, DateTime
 from sqlalchemy.ext.declarative import as_declarative
 from flask_sqlalchemy import SQLAlchemy
-# from flask_migrate import Migrate
+from flask_migrate import Migrate
 import json
 
 database_name = "recipe_reviews"
@@ -14,7 +14,7 @@ database_path = os.environ['DATABASE_URL']
 
 db = SQLAlchemy()
 
-def setup_db(app):
+def setup_db(app, database_path=database_path):
     app.config["SQLALCHEMY_DATABASE_URI"] = database_path
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.app = app
@@ -51,7 +51,7 @@ class Recipe(db.Model):
 
     video_link = db.Column(db.String(500))
 
-    reviews = db.relationship('Reviews', backref=db.backref('reviews', lazy=True), cascade="all")
+    reviews = db.relationship('Reviews', backref=db.backref('reviews', lazy=True), cascade="all, delete")
 
     '''
     format()

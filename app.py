@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from models import Recipe, Reviews, setup_db
 from auth import AuthError, requires_auth
+from flask_migrate import Migrate
 
 def create_app(test_config=None):
 
@@ -44,7 +45,7 @@ def create_app(test_config=None):
         reviews = Reviews.query.filter(Reviews.recipe_id == recipe_id)
         data = []
         if reviews.count() == 0:
-            return jsonify(data)
+            return jsonify({'reviews' : data})
         else:
             for r in reviews:
                 data.append(r.review)
@@ -73,7 +74,7 @@ def create_app(test_config=None):
         try:
             recipe.name = name
             recipe.steps = steps
-            recipe.imaimagege_link = image_link
+            recipe.image_link = image_link
             recipe.video_link = video_link
             recipe.ingredients = ingredients
             recipe.update()
@@ -115,18 +116,19 @@ def create_app(test_config=None):
 
     '''
     @implement endpoint
-        POST /recipes/<int:recipe_id>/add_review,
+        POST /recipes/<int:recipe_id>/reviews,
             it should require the 'add-review' permission restricted to recipe reader
             it should create a new row in the reviews table
         returns status code 200 and json {"success": True} when review is successfully created
             or appropriate status code indicating reason for failure
     '''
-    @app.route('/recipes/<int:recipe_id>/add_review', methods=['POST'])
+    @app.route('/recipes/<int:recipe_id>/reviews', methods=['POST'])
     @requires_auth('add:review')
     def create_recipe_review(payload,recipe_id):
         body = request.get_json()
         review = body.get('review', None)
         recipe = Recipe.query.filter(Recipe.id == recipe_id).one_or_none()
+        print(recipe)
         if (review == None or recipe == None):
             abort(404) 
         try:
