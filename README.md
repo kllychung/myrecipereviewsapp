@@ -8,9 +8,6 @@ This project contains  code written for myRecipes api which contain several endp
 2. Allow recipe readers to view published recipes from publishers and write recipe reviews
 3. Publishers can also read reviews about their readers
 
-# App Hosting
-App is hosted at https://myrecipereviewsapp.herokuapp.com
-
 # Authentication
 Two roles have been created:
 1. Reader
